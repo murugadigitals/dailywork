@@ -32,5 +32,7 @@ document.getElementById("print").addEventListener("click", function () {
 
 document.getElementById("preview").addEventListener("click", function () {
   document.getElementById("tableContainer").style.display = "block";
+  document.getElementById("setDate").innerHTML = `Tirupati TMO - 2 Dated : ${mdatePlus} & Working Hours From 11:30 To 19:30`;
+  document.getElementById("tableContainer").style.marginTop = "100px";
   document.getElementById("tableContainer").contentEditable = true;
 });

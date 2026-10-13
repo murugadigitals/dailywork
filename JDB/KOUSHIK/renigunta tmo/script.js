@@ -32,5 +32,7 @@ document.getElementById("print").addEventListener("click", function () {
 
 document.getElementById("preview").addEventListener("click", function () {
   document.getElementById("tableContainer").style.display = "block";
+  document.getElementById("setDate").innerHTML = `Renigunta TMO - 1 Dated : ${mdatePlus} || From 06:00 To 09:30 & 14:30 To 18:00`;
+  document.getElementById("tableContainer").style.marginTop = "100px";
   document.getElementById("tableContainer").contentEditable = true;
 });

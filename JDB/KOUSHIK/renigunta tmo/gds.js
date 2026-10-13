@@ -52,10 +52,12 @@ document.getElementById("print").addEventListener("click", function (e) {
   document.getElementById("tableContainer").style.display = "block";
 
   window.print();
-  location.reload();
+  // location.reload();
 });
 
 document.getElementById("preview").addEventListener("click", function () {
   document.getElementById("tableContainer").style.display = "block";
+  document.getElementById("setName").innerHTML = `GDS Annexure Renigunta TMO - 1 Dated : ${mdatePlus}`;
+  document.getElementById("tableContainer").style.marginTop = "100px";
   document.getElementById("tableContainer").contentEditable = true;
 });

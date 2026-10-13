@@ -27,10 +27,7 @@
             text-align: right;
         }
 
-        /* .toprow th {
-            background-color: #ebc806;
-            font-weight: bold;
-        } */
+
 
         #note {
             display: none !important;
@@ -60,19 +57,20 @@
             </div>
             <br>
             <div>
+                <button id="preview">Preview</button>
+            </div>
+            <div>
                 <button id="print">Print</button>
             </div>
 
-            <div>
-                <button id="preview">Preview</button>
-            </div>
+
             <div>
                 <button>Reset</button>
             </div>
         </div>
     </div>
 
-    <div id="tableContainer">
+    <div id="tableContainer" contenteditable="true">
         <div id="headerDiv">
             <div id="header">
                 <div id="ashok">
@@ -201,19 +199,18 @@
         <div> RMS TP Dn., Tirupati - 517501</div>
     </div>
     <br><br>
-    <div id="note" style="width: 520px;">
+    <div id="note" style="width: 100%;">
         <p>
             <span style="display: inline-block;text-decoration: underline;">Note :1 </span> MG of Tirupati
-            TMO -
-            1 should work with Tirupati HUB - 1 <span style="display: inline-block;margin-left: 55px;">From
+            TMO - 1 should work with Tirupati HUB - 1 <span style="display: inline-block;margin-left: 0px;">From
                 09:00:00 Hrs</span>
         </p>
 
         <p>
             <span style="display: inline-block; text-decoration: underline;">Note :2</span>
             GDS-4, GDS-5, GDS-6 of Tirupati TMO - 1 should work with
-            <span style="display: inline-block; margin-left: 55px;">
-                Tirupati HUB - 1 From 09:00:00 Hrs
+
+            Tirupati HUB - 1 From<span style="display: inline-block; margin-left: 70px;"></span> 09:00:00 Hrs
             </span>
         </p>
     </div>

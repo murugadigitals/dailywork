@@ -22,7 +22,8 @@ button:hover {
   color: red;
 }
 
-select {
+select,
+#setDay {
   padding: 5px;
   width: 200px;
 }

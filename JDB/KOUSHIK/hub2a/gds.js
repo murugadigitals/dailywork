@@ -59,15 +59,15 @@ document.getElementById("print").addEventListener("click", function (e) {
 
   // Display the table before printing
   document.getElementById("tableContainer").style.display = "block";
+  document.getElementById("tableContainer").contentEditable = true;
 
   window.print();
 });
 
 document.getElementById("preview").addEventListener("click", function () {
-  alert("preview working");
+  // alert("preview working");
   document.getElementById("tableContainer").style.display = "block";
   document.getElementById("tableContainer").contentEditable = true;
+  document.getElementById("tableContainer").style.marginTop = "100px";
+  document.getElementById("setName").innerHTML = `GDS Annexure Tirupati HUB - 2A Dated : ${mdate}`;
 });
-
-// window.bodyLoad1 = bodyLoad1;
-// window.printClick = printClick;

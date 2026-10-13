@@ -96,14 +96,30 @@ document.getElementById("genTable").addEventListener("click", function () {
   let officeName = document.getElementById("optOffice").value;
   let hsaSign = document.getElementById("hsaSign").value;
 
+  const dateValue = document.getElementById("setDay").value;
+
+  let dropDate = "";
+
+  if (dateValue) {
+    const date = new Date(dateValue + "T00:00:00");
+
+    const dayName = date.toLocaleDateString("en-US", {
+      weekday: "long",
+    });
+
+    const formattedDate = dateValue.split("-").reverse().join("-");
+
+    dropDate = `${dayName}, ${formattedDate}`;
+  }
+
   if (officeName === "Tirupati HUB - 2A") {
-    document.getElementById("dateDiv").innerHTML = `OSA Annexure, Tirupati HUB - 2A Dated : ${mdate}`;
+    document.getElementById("dateDiv").innerHTML = `OSA Annexure, Tirupati HUB - 2A Dated : ${dropDate}`;
     document.getElementById("hsaSign").textContent = officeName;
   } else if (officeName === "Tirupati HUB - 2B") {
-    document.getElementById("dateDiv").innerHTML = `OSA Annexure, Tirupati HUB - 2B Dated : ${mdate}`;
+    document.getElementById("dateDiv").innerHTML = `OSA Annexure, Tirupati HUB - 2B Dated : ${dropDate}`;
     document.getElementById("hsaSign").textContent = officeName;
   } else if (officeName === "Tirupati HUB - 1") {
-    document.getElementById("dateDiv").innerHTML = `OSA Annexure, Tirupati HUB - 1 Dated : ${mdatePlus}`;
+    document.getElementById("dateDiv").innerHTML = `OSA Annexure, Tirupati HUB - 1 Dated : ${dropDate}`;
     document.getElementById("hsaSign").textContent = officeName;
   }
 

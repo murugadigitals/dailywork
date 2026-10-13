@@ -159,7 +159,9 @@ function printClick() {
     document.getElementById(target).textContent = document.getElementById(source).value;
   });
 
+  document.getElementById("tableContainer").style.display = "block";
   document.getElementById("setDate").innerHTML = `Tirupati HUB - 2B Dated : ${mdate} & Working Hours From 17:30 To 06:00`;
+  document.getElementById("tableContainer").contentEditable = true;
 
   // if (gds4 === "N/A" || gds5 === "N/A") {
   //   document.getElementById("gdsTotal").textContent = "36";
@@ -170,11 +172,12 @@ function printClick() {
   window.print();
 }
 
-// document.getElementById("preview").addEventListener("click", function () {
-//   alert("preview working");
-//   document.getElementById("tableContainer").style.display = "block";
-//   document.getElementById("tableContainer").contentEditable = true;
-// });
+document.getElementById("preview").addEventListener("click", function () {
+  document.getElementById("tableContainer").style.display = "block";
+  document.getElementById("tableContainer").style.marginTop = "100px";
+  document.getElementById("tableContainer").contentEditable = true;
+  document.getElementById("setDate").innerHTML = `Tirupati HUB - 2B Dated : ${mdate} & Working Hours From 17:30 To 06:00`;
+});
 
 window.bodyLoad1 = bodyLoad1;
 window.printClick = printClick;
