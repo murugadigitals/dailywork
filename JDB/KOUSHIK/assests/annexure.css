@@ -1,5 +1,6 @@
 * {
   font-weight: bold;
+  font-family: sans-serif;
 }
 
 #header {
@@ -24,6 +25,10 @@ button:hover {
 select {
   padding: 5px;
   width: 200px;
+}
+.toprow {
+  background-color: gray !important;
+  color: black !important;
 }
 
 #namesTable {

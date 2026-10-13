@@ -12,7 +12,7 @@ function bodyLoad1() {
     "optGds1","optGds2",
     "optGds3","optGds4","optGds5","optGds6",
     "optGds7","optGds8","optGds9","optGds10",
-    "optGds11"
+    
   ];
 
   /* prettier-ignore-end */
@@ -47,7 +47,6 @@ document.getElementById("print").addEventListener("click", function (e) {
     optGds8: "gds8test",
     optGds9: "gds9test",
     optGds10: "gds10test",
-    optGds11: "gds11test",
   };
 
   Object.entries(fields).forEach(([source, target]) => {

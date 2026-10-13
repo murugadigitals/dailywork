@@ -1,5 +1,6 @@
 * {
   font-weight: bold;
+  font-family: sans-serif;
 }
 
 #header {
@@ -49,16 +50,14 @@ table {
   text-indent: 10px;
 }
 
+.toprow {
+  background-color: gray !important;
+  color: black !important;
+}
+
 body {
   width: 90%;
   margin: auto;
-  font-family: sans-serif;
-}
-
-#inputContainer {
-  /* display: grid;
-  grid-template-columns: 4fr 4fr 4fr;
-  gap: 100px; */
 }
 
 #mtsContainer,
