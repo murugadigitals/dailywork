@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- <link rel="stylesheet" href="../../node_modules/bootstrap-icons/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="../../node_modules/bootstrap/dist/css/bootstrap.min.css"> -->
+    <link rel="stylesheet" href="../node_modules/bootstrap-icons/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="../../assests/filecss.css">
+
+    <title>GDS Annexure Renigunta TMO - 1</title>
+
+</head>
+
+<body>
+    <div id="inputContainer" style="display: grid;grid-template-columns: 4fr 4fr 4fr;">
+        <div id="saContainer">
+
+            <div id="btnsContainer">
+                <div class="alignNames" style="font-weight: bold;text-decoration: underline;font-size: larger;">
+                    <label for="">Designation</label>
+                    <label for="">Select Official</label>
+                </div>
+                <br>
+                <div class="alignNames">
+                    <label for=""> GDS - 1 </label>
+                    <select name="" id="optGds1"> </select>
+                </div>
+                <br>
+                <div class="alignNames">
+                    <label for=""> GDS - 2 </label>
+                    <select name="" id="optGds2"> </select>
+                </div>
+                <br>
+                <div class="alignNames">
+                    <label for=""> GDS - 3 </label>
+                    <select name="" id="optGds3"> </select>
+                </div>
+                <br>
+                <div class="alignNames">
+                    <label for=""> GDS - 4 </label>
+                    <select name="" id="optGds4"> </select>
+                </div>
+                <br>
+                <div class="alignNames">
+                    <label for=""> GDS - 5 </label>
+                    <select name="" id="optGds5"> </select>
+                </div>
+                <br>
+                <div>
+                    <label for="">Select Date of the SET</label>
+                    <input type="date" name="" id="setDay" />
+                </div><br>
+
+                <div>
+                    <button id="preview">Preview</button>
+                </div>
+                <div>
+                    <button id="print" type="button">Print</button>
+                </div>
+                <div>
+                    <button>Reset</button>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <div id="tableContainer" contenteditable="true">
+        <div id="headerDiv">
+
+            <div id="header" style="margin: 0;height: 8vh !important;">
+                <div id="ashok">
+                    <img src="../../assests/ashok.png" alt="" width="75" height="80">
+                </div>
+                <div
+                    style="text-align: center;position: relative;text-wrap:nowrap;z-index: 100;line-height: 20px;font-weight: bold;">
+                    <div>Department of Posts :: India</div>
+                    <div>Head Record Office, RMS TP Dn., Tirupati - 517501</div>
+                    <div id="setName" style="text-decoration: underline;"></div>
+                </div>
+                <div id="logo">
+                    <img src="../../assests/logo.png" alt="" width="130" height="80">
+                </div>
+            </div>
+        </div>
+        <br>
+        <div id="namesDiv" style="width: 100%;">
+            <table style="border-collapse: separate;border-spacing: 0px;">
+                <thead>
+                    <tr class="toprow">
+                        <th style="border-top-left-radius: 7px;">S.NO</th>
+                        <th>Name of the Outsider<br>worked in Vacant<br>Post</th>
+                        <th>Duty<br>From</th>
+                        <th>Duty<br>To</th>
+                        <th>Total<br>Hrs</th>
+                        <th>Signature of the<br>Outsider</th>
+                        <th style="border-top-right-radius: 7px;">Remarks</th>
+                    </tr>
+                </thead>
+                <tbody align="center">
+                    <tr style="font-size:14px;">
+                        <td>1</td>
+                        <td style="text-align:left;text-indent:10px" id="gds1test"></td>
+                        <td>06:00 To 09:00</td>
+                        <td>15:00 To 17:00</td>
+                        <td>5</td>
+                        <td>&nbsp;</td>
+                        <td>&nbsp;</td>
+                    </tr>
+                    <tr style="font-size:14px;">
+                        <td>2</td>
+                        <td style="text-align:left;text-indent:10px" id="gds2test"></td>
+                        <td>06:15 To 08:45</td>
+                        <td>15:00 To 17:30</td>
+                        <td>5</td>
+                        <td>&nbsp;</td>
+                        <td>&nbsp;</td>
+                    </tr>
+                    <tr style="font-size:14px;">
+                        <td>3</td>
+                        <td style="text-align:left;text-indent:10px" id="gds3test"></td>
+                        <td>06:15 To 08:45</td>
+                        <td>15:00 To 17:30</td>
+                        <td>5</td>
+                        <td>&nbsp;</td>
+                        <td>&nbsp;</td>
+                    </tr>
+                    <tr style="font-size:14px;">
+                        <td>4</td>
+                        <td style="text-align:left;text-indent:10px" id="gds4test"></td>
+                        <td>06:15 To 08:45</td>
+                        <td>15:00 To 17:30</td>
+                        <td>5</td>
+                        <td>&nbsp;</td>
+                        <td>&nbsp;</td>
+                    </tr>
+                    <tr style="font-size:14px;">
+                        <td>5</td>
+                        <td style="text-align:left;text-indent:10px" id="gds5test"></td>
+                        <td>06:15 To 08:45</td>
+                        <td>15:00 To 17:30</td>
+                        <td>5</td>
+                        <td>&nbsp;</td>
+                        <td>&nbsp;</td>
+                    </tr>
+
+                </tbody>
+                <tfoot align="center">
+                    <tr style="height: 30px;">
+                        <td colspan="4" style="border-bottom-left-radius: 7px;">Total</td>
+                        <td id="gdsTotal">25</td>
+                        <td>&nbsp;</td>
+                        <td style="border-bottom-right-radius: 7px;">&nbsp;</td>
+                    </tr>
+                </tfoot>
+            </table>
+        </div>
+        <br><br>
+        <div style="display: flex;justify-content:space-between;">
+            <div>
+                <div><strong>Head Record Officer</strong></div>
+                <div><strong>RMS TP Dn.,Tirupati</strong></div>
+            </div>
+
+            <div style="text-align: end;">
+                <div><strong>Signature of the MG</strong></div>
+                <div><strong>Renigunta TMO - 1</strong></div>
+            </div>
+        </div>
+    </div>
+    <script type="module" src="./renigunta tmo gds.js"></script>
+
+
+</body>
+
+</html>

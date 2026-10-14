@@ -169,7 +169,7 @@ document.getElementById("preview").addEventListener("click", function () {
 
   // alert(dropDate);
   document.getElementById("tableContainer").style.display = "block";
-  document.getElementById("setDate").innerHTML = `Tirupati HUB - 1 Dated : ${dropDate} & Working Hours From 17:30 To 06:00`;
+  document.getElementById("setDate").innerHTML = `Tirupati HUB - 1 Dated : ${dropDate} & Working Hours From 08:45 To 16:45`;
   document.getElementById("tableContainer").style.marginTop = "100px";
   document.getElementById("tableContainer").contentEditable = true;
 });
