@@ -1,0 +1,74 @@
+import { mdate, outsiderMTS } from "../../sourceData.js";
+
+function bodyLoad1() {
+  // employees.sort((a, b) => a.localeCompare(b));
+  let sortedEmployees = [...outsiderMTS];
+  sortedEmployees.sort((a, b) => a.localeCompare(b));
+
+  const sortersList = ["--Select Employee--", ...sortedEmployees];
+
+  // prettier-ignore
+  const sortersDropdown = ["optGds1","optGds2","optGds3","optGds9"];
+
+  /* prettier-ignore-end */
+
+  sortersDropdown.forEach((id) => {
+    const select = document.getElementById(id);
+
+    sortersList.forEach((emp) => {
+      const option = document.createElement("option");
+
+      option.value = emp;
+      option.textContent = emp;
+
+      // option.selected = "OS Arranged";
+
+      select.appendChild(option);
+    });
+  });
+}
+bodyLoad1();
+
+document.getElementById("print").addEventListener("click", function (e) {
+  e.preventDefault();
+  const fields = {
+    optGds1: "gds1test",
+    optGds2: "gds2test",
+    optGds3: "gds3test",
+    optGds9: "gds9test",
+  };
+
+  Object.entries(fields).forEach(([source, target]) => {
+    document.getElementById(target).textContent = document.getElementById(source).value;
+  });
+
+  // document.getElementById("setName").innerHTML = `GDS Annexure Tirupati HUB - 1 Dated : ${mdatePlus}`;
+
+  // Display the table before printing
+  document.getElementById("tableContainer").style.display = "block";
+
+  window.print();
+});
+
+document.getElementById("preview").addEventListener("click", function () {
+  const dateValue = document.getElementById("setDay").value;
+
+  let dropDate = "";
+
+  if (dateValue) {
+    const date = new Date(dateValue + "T00:00:00");
+
+    const dayName = date.toLocaleDateString("en-US", {
+      weekday: "long",
+    });
+
+    const formattedDate = dateValue.split("-").reverse().join("-");
+
+    dropDate = `${dayName}, ${formattedDate}`;
+  }
+
+  document.getElementById("tableContainer").style.display = "block";
+  document.getElementById("setDate").innerHTML = `GDS Annexure of Tirupati HUB - 1, Dated : ${dropDate} `;
+  document.getElementById("tableContainer").style.marginTop = "100px";
+  document.getElementById("tableContainer").contentEditable = true;
+});

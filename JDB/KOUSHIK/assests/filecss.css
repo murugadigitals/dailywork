@@ -51,7 +51,7 @@ table {
 }
 
 .toprow {
-  background-color: gray !important;
+  background-color: rgba(128, 128, 128, 0.568) !important;
   color: black !important;
 }
 
