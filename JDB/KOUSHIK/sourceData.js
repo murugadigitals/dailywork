@@ -10,7 +10,7 @@ var mdatePlus = `${days[today.getDay() + 1]}, ${today.getDate() + 1} - ${months[
 
 // prettier-ignore
 var sorters = [
-  "M Sri Hari","B Ramesh Raju","M Bharath Kumar",
+  "M Sri Hari","B Ramesh Raju","M Bharath Kumar","B Sreekanth Babu","B Srilatha",
   "K Saravana","I Naveen Reddy","P Chandraiah","A Anuradha","P Jagadeesh","B Gangadhar","G Srinath",
   "P Venkatesh","R Rajendran","V Hari Krishna","K Suresh","V Rajesh","OS Arranged",
   "Not Arranged","K Pavan Singh","Arushi Kumari","N/A","M Baba Fakruddin","M Kupendra Kumar Rao",

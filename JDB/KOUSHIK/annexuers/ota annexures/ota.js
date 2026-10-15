@@ -20,8 +20,13 @@ bodyLoad();
 document.getElementById("push1").addEventListener("click", function () {
   //   let selectedOsa = this.value;
   let selectedOsa = document.getElementById("optOsa").value;
-  if (selectedOsa !== "--Select OSA Name--" && items.indexOf(selectedOsa) === -1) {
+  if (selectedOsa === "" || selectedOsa === "--Select Employee--") {
+    alert("Please select one Employee");
+    return;
+  }
+  if (items.indexOf(selectedOsa) === -1) {
     items.push(selectedOsa);
+    // document.getElementById("optOsa").textContent = "--Select OSA Name--";
 
     document.querySelector("ol").innerHTML = "";
     items.forEach((item) => {
@@ -29,7 +34,6 @@ document.getElementById("push1").addEventListener("click", function () {
       li.textContent = item;
       document.querySelector("ol").appendChild(li);
     });
-    document.getElementById("optOsa").value = "--Select OSA Name--";
   } else {
     alert("Employee name already exits.");
   }
