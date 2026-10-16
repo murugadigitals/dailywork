@@ -12,7 +12,7 @@
 
     <link rel="stylesheet" href="../node_modules/bootstrap-icons/font/bootstrap-icons.css">
     <!-- <link rel="stylesheet" href="./node_modules/bootstrap/dist/css/bootstrap.min.css"> -->
-    <link rel="stylesheet" href="../assests/filecss.css">
+    <link rel="stylesheet" href="../../assests/filecss.css">
 
 
 </head>
@@ -77,16 +77,11 @@
                     <select name="" id="optGds10"> </select>
                 </div>
                 <br>
-                <div class="alignNames">
-                    <label for=""> GDS - 11 </label>
-                    <select name="" id="optGds11"> </select>
-                </div>
-                <br>
-                <div class="alignNames">
-                    <label for=""> GDS - 12 </label>
-                    <select name="" id="optGds12"> </select>
-                </div>
-                <br>
+
+                <div>
+                    <label for="">Select Date of the SET</label>
+                    <input type="date" name="" id="setDay" />
+                </div><br>
                 <div>
                     <button id="preview">Preview</button>
                 </div>
@@ -106,7 +101,7 @@
 
             <div id="header" style="margin: 0;height: 8vh !important;">
                 <div id="ashok">
-                    <img src="../assests/ashok.png" alt="" width="50" height="50">
+                    <img src="../../assests/ashok.png" alt="" width="50" height="50">
                 </div>
                 <div
                     style="text-align: center;position: relative;text-wrap:nowrap;z-index: 100;line-height: 20px;font-weight: bold;">
@@ -115,7 +110,7 @@
                     <div id="setName" style="text-decoration: underline;"></div>
                 </div>
                 <div id="logo">
-                    <img src="../assests/logo.png" alt="" width="120" height="50">
+                    <img src="../../assests/logo.png" alt="" width="120" height="50">
                 </div>
             </div>
         </div>
@@ -136,120 +131,99 @@
                     <tr style="font-size:14px;">
                         <td>1</td>
                         <td style="text-align:left;text-indent:10px" id="gds1test"></td>
-                        <td>17:30:00</td>
-                        <td>20:30:00</td>
-                        <td>3</td>
+                        <td>18:00:00</td>
+                        <td>23:00:00</td>
+                        <td>5</td>
                         <td>&nbsp;</td>
                         <td>&nbsp;</td>
                     </tr>
                     <tr style="font-size:14px;">
                         <td>2</td>
                         <td style="text-align:left;text-indent:10px" id="gds2test"></td>
-                        <td>17:30:00</td>
-                        <td>20:30:00</td>
-                        <td>3</td>
+                        <td align="center">19:30:00</td>
+                        <td align="center">00:30:00</td>
+                        <td>5</td>
                         <td>&nbsp;</td>
                         <td>&nbsp;</td>
                     </tr>
                     <tr style="font-size:14px;">
                         <td>3</td>
                         <td style="text-align:left;text-indent:10px" id="gds3test"></td>
-                        <td>18:00:00</td>
-                        <td>23:00:00</td>
+                        <td align="center">01:00:00</td>
+                        <td align="center">06:00:00</td>
                         <td id="rajaHours">5</td>
                         <td>&nbsp;</td>
-                        <td>&nbsp;</td>
+                        <td>MSA - 1</td>
                     </tr>
                     <tr style="font-size:14px;">
                         <td>4</td>
                         <td style="text-align:left;text-indent:10px" id="gds4test"></td>
-                        <td>19:30:00</td>
-                        <td>00:30:00</td>
-                        <td id="hariHours">-</td>
+                        <td align="center">01:00:00</td>
+                        <td align="center">06:00:00</td>
+                        <td id="hariHours">5</td>
                         <td>&nbsp;</td>
-                        <td>&nbsp;</td>
+                        <td>PKT Br</td>
                     </tr>
                     <tr style="font-size:14px;">
                         <td>5</td>
                         <td style="text-align:left;text-indent:10px" id="gds5test"></td>
-                        <td>20:00:00</td>
-                        <td>01:00:00</td>
-                        <td id="dilliHours">-</td>
+                        <td align="center">02:00:00<br>04:00:00</td>
+                        <td align="center">04:00:00<br>07:00:00</td>
+                        <td id="dilliHours">5</td>
                         <td>&nbsp;</td>
                         <td>&nbsp;</td>
                     </tr>
                     <tr style="font-size:14px;">
                         <td>6</td>
                         <td style="text-align:left;text-indent:10px" id="gds6test"></td>
-                        <td>01:00:00</td>
-                        <td>06:00:00</td>
+                        <td align="center">02:00:00<br>04:00:00</td>
+                        <td align="center">04:00:00<br>07:00:00</td>
                         <td>5</td>
                         <td>&nbsp;</td>
-                        <td>MSA - 1</td>
+                        <td>&nbsp;</td>
                     </tr>
                     <tr style="font-size:14px;">
                         <td>7</td>
                         <td style="text-align:left;text-indent:10px" id="gds7test"></td>
-                        <td>01:00:00</td>
-                        <td>06:00:00</td>
+                        <td align="center">03:00:00<br>04:00:00</td>
+                        <td align="center">04:00:00<br>08:00:00</td>
                         <td>5</td>
                         <td>&nbsp;</td>
-                        <td>MSA - 2</td>
+                        <td>&nbsp;</td>
                     </tr>
                     <tr style="font-size:14px;">
                         <td>8</td>
                         <td style="text-align:left;text-indent:10px" id="gds8test"></td>
-                        <td>01:00:00</td>
-                        <td>06:00:00</td>
+                        <td align="center">03:00:00<br>04:00:00</td>
+                        <td align="center">04:00:00<br>08:00:00</td>
                         <td>5</td>
                         <td>&nbsp;</td>
-                        <td>PKT Br</td>
+                        <td>&nbsp;</td>
                     </tr>
                     <tr style="font-size:14px;">
                         <td>9</td>
                         <td style="text-align:left;text-indent:10px" id="gds9test"></td>
-                        <td>02:00:00<br>04:00:00</td>
-                        <td>04:00:00<br>07:00:00</td>
+                        <td align="center">03:30:00<br>04:00:00</td>
+                        <td align="center">04:00:00<br>08:30:00</td>
                         <td>5</td>
                         <td>&nbsp;</td>
-                        <td> 04:00 - 07:00 <br>TMO - 1</td>
+                        <td>&nbsp;</td>
                     </tr>
                     <tr style="font-size:14px;">
                         <td>10</td>
                         <td style="text-align:left;text-indent:10px" id="gds10test"></td>
-                        <td>03:00:00<br>04:00:00</td>
-                        <td>04:00:00<br>08:00:00</td>
-                        <td>5</td>
-                        <td>&nbsp;</td>
-                        <td> 04:00 - 08:00 <br>TMO - 1</td>
-                    </tr>
-                    <tr style="font-size:14px;">
-                        <td>11</td>
-                        <td style="text-align:left;text-indent:10px" id="gds11test"></td>
-                        <td>03:00:00<br>04:00:00</td>
-                        <td>04:00:00<br>08:00:00</td>
-                        <td>5</td>
-                        <td>&nbsp;</td>
-                        <td> 04:00 - 08:00 <br>TMO - 1</td>
-                    </tr>
-
-
-                    <tr style="font-size:14px;">
-                        <td>12</td>
-                        <td style="text-align:left;text-indent:10px" id="gds12test"></td>
-                        <td>17:30:00</td>
-                        <td>19:30:00</td>
+                        <td align="center">17:30:00</td>
+                        <td align="center">19:30:00</td>
                         <td>2</td>
                         <td>&nbsp;</td>
-                        <td>MBC</td>
+                        <td>&nbsp;</td>
                     </tr>
-
 
                 </tbody>
                 <tfoot align="center">
                     <tr style="height: 30px;">
                         <td colspan="4" style="border-bottom-left-radius: 7px;">Total</td>
-                        <td id="gdsTotal">43</td>
+                        <td id="gdsTotal">47</td>
                         <td>&nbsp;</td>
                         <td style="border-bottom-right-radius: 7px;">&nbsp;</td>
                     </tr>
@@ -270,7 +244,7 @@
         </div>
     </div>
 
-    <script type="module" src="./gds.js"></script>
+    <script type="module" src="./hub2b gds.js"></script>
 
 </body>
 
