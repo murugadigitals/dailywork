@@ -158,8 +158,11 @@ function printClick() {
   Object.entries(fields).forEach(([source, target]) => {
     document.getElementById(target).textContent = document.getElementById(source).value;
   });
-
-  document.getElementById("setDate").innerHTML = `Tirupati HUB - 2A Dated : ${mdate} & Working Hours From 17:30 To 06:00`;
+  if (document.getElementById("selectSet").value === "Tirupati HUB - 2A") {
+    document.getElementById("setDate").innerHTML = `Tirupati HUB - 2A Dated : ${mdate} & Working Hours From 17:30 To 06:00`;
+  } else {
+    document.getElementById("setDate").innerHTML = `Tirupati HUB - 2B Dated : ${mdate} & Working Hours From 17:30 To 06:00`;
+  }
 
   // if (gds4 === "N/A" || gds5 === "N/A") {
   //   document.getElementById("gdsTotal").textContent = "36";

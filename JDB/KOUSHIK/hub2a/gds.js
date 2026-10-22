@@ -55,7 +55,7 @@ document.getElementById("print").addEventListener("click", function (e) {
     document.getElementById(target).textContent = document.getElementById(source).value;
   });
 
-  document.getElementById("setName").innerHTML = `GDS Annexure Tirupati HUB - 2A Dated : ${mdate}`;
+  // document.getElementById("setName").innerHTML = `GDS Annexure Tirupati HUB - 2A Dated : ${mdate}`;
 
   // Display the table before printing
   document.getElementById("tableContainer").style.display = "block";
@@ -69,5 +69,11 @@ document.getElementById("preview").addEventListener("click", function () {
   document.getElementById("tableContainer").style.display = "block";
   document.getElementById("tableContainer").contentEditable = true;
   document.getElementById("tableContainer").style.marginTop = "100px";
-  document.getElementById("setName").innerHTML = `GDS Annexure Tirupati HUB - 2A Dated : ${mdate}`;
+  if (document.getElementById("selectSet").value === "Tirupati HUB - 2A") {
+    document.getElementById("setName").innerHTML = `GDS Annexure Tirupati HUB - 2A Dated : ${mdate}`;
+    document.getElementById("set").innerHTML = `Tirupati HUB - 2A`;
+  } else {
+    document.getElementById("setName").innerHTML = `GDS Annexure Tirupati HUB - 2B Dated : ${mdate}`;
+    document.getElementById("set").innerHTML = `Tirupati HUB - 2B`;
+  }
 });
