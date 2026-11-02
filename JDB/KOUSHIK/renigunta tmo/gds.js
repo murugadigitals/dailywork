@@ -46,7 +46,7 @@ document.getElementById("print").addEventListener("click", function (e) {
     document.getElementById(target).textContent = document.getElementById(source).value;
   });
 
-  document.getElementById("setName").innerHTML = `GDS Annexure Renigunta TMO - 1 Dated : ${mdatePlus}`;
+  // document.getElementById("setName").innerHTML = `GDS Annexure Renigunta TMO - 1 Dated : ${mdatePlus}`;
 
   // Display the table before printing
   document.getElementById("tableContainer").style.display = "block";
@@ -57,7 +57,35 @@ document.getElementById("print").addEventListener("click", function (e) {
 
 document.getElementById("preview").addEventListener("click", function () {
   document.getElementById("tableContainer").style.display = "block";
-  document.getElementById("setName").innerHTML = `GDS Annexure Renigunta TMO - 1 Dated : ${mdatePlus}`;
+  const fields = {
+    optGds1: "gds1test",
+    optGds2: "gds2test",
+    optGds3: "gds3test",
+    optGds4: "gds4test",
+    optGds5: "gds5test",
+  };
+
+  Object.entries(fields).forEach(([source, target]) => {
+    document.getElementById(target).textContent = document.getElementById(source).value;
+  });
+
+  const dateValue = document.getElementById("setDay").value;
+
+  let dropDate = "";
+
+  if (dateValue) {
+    const date = new Date(dateValue + "T00:00:00");
+
+    const dayName = date.toLocaleDateString("en-US", {
+      weekday: "long",
+    });
+
+    const formattedDate = dateValue.split("-").reverse().join("-");
+
+    dropDate = `${dayName}, ${formattedDate}`;
+  }
+
+  document.getElementById("setDate").innerHTML = `GDS Annexure Renigunta TMO - 1 Dated : ${dropDate}`;
   document.getElementById("tableContainer").style.marginTop = "100px";
   document.getElementById("tableContainer").contentEditable = true;
 });

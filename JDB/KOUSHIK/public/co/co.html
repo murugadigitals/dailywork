@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CO Letter</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+            font-family: sans-serif;
+            font-size: 20px;
+        }
+
+        select,
+        input,
+        button {
+            width: 230px;
+            margin: 0px;
+            padding: 10px;
+            border-radius: 5px;
+        }
+
+        [type="Number"] {
+            width: 100px;
+        }
+
+        #inputDiv {
+            display: flex;
+            justify-content: space-between;
+            /* padding: 20px; */
+            /* gap: 50px; */
+            margin-top: 100px;
+        }
+
+        /* div {
+            width: 100%;
+        } */
+
+        body {
+            width: 90%;
+            margin: auto;
+            text-align: justify;
+        }
+
+        #outputContainer {
+            /* margin-top: 20px; */
+            /* display: none; */
+        }
+
+        @media print {
+            * {
+                box-sizing: border-box;
+                font-size: 17px !important;
+            }
+
+            body {
+                width: 90%;
+                margin: auto;
+            }
+
+            #outputContainer {
+                display: block;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div id="inputContainer">
+
+        <div id="inputDiv">
+            <div>
+                <div>Select Employee Name</div>
+                <select name="" class="emp-names"></select>
+            </div>
+            <div>
+                <div>Select Designation</div>
+                <select name="" id="optDesignation">
+                    <option value="">--Select Designation--</option>
+                    <option value="Sorting Assistant">Sorting Assistant</option>
+                    <option value="Mail Guard">Mail Guard</option>
+                    <option value="Multi Tasking Staff">Multi Tasking Staff</option>
+                    <option value="GDS">Gramin Dak Sevak</option>
+                </select>
+            </div>
+            <div>
+                <div>Performed POH Duty On</div>
+                <input type="date" name="" id="pohDutyOn">
+            </div>
+            <div>
+                <div>POH duty with the SET</div>
+                <select>
+                    <option value="">--Select SET--</option>
+                    <option value="Tirupati HUB - 2A">Tirupati HUB - 2A</option>
+                    <option value="Tirupati HUB - 2B">Tirupati HUB - 2B</option>
+                    <option value="Tirupati HUB - 1">Tirupati HUB - 1</option>
+                    <option value="Tirupati TMO - 1">Tirupati TMO - 1</option>
+                    <option value="Tirupati TMO - 2">Tirupati TMO - 2</option>
+                    <option value="Renigunta TMO - 1">Renigunta TMO - 1</option>
+                </select>
+            </div>
+            <div>
+                <div>Select Cycle</div>
+                <input type="number" name="" id="cycleNo" placeholder="cycle no" min="1" max="15" value="5">
+            </div>
+            <div>
+                <div>Leave on which Date</div>
+                <input type="date" name="" id="leaveOn">
+            </div>
+            <div>
+                <button id="preview">Preview</button>
+                <p id="daysCount" style="text-align: center;color: red;font-weight:bold;"></p>
+                <button id="print">print</button>
+            </div>
+
+        </div>
+
+    </div>
+    <div id="outputContainer" style="margin-top: 150px;">
+        <div style="display: flex;justify-content:space-between !important; width: 100%;">
+            <div id="fromDiv">
+                <div>From : </div>
+                <div class="divEmployee"></div>
+                <div id="designationDiv"></div>
+                <div>RMS TP Dn.,</div>
+                <div>Tirupati - 517501</div>
+                <div style="margin-top: 10px;">To :</div>
+                <div>The HRO</div>
+                <div>RMS TP Dn.,</div>
+                <div>Tirupati - 517501 </div>
+            </div>
+            <div id="dateDiv">
+                <div id="date"></div>
+                <div style="margin-left: 20px;">Tirupati</div>
+            </div>
+        </div>
+        <div style="margin-top: 10px;margin-left: 10%;">Respected Sir,</div>
+
+        <div style="margin-top: 0px;margin-left: 10%;">Sub: Request for grant of CL for <span class="clCount"></span>
+            day (s) – Reg.,</div>
+        <div style="text-align: center;">*****</div>
+        <div style="margin-top: 10px;margin-left: 10%;">I humbly submit the following few lines for you kind
+            consideration</div>
+
+        <div id="content" style="margin-top: 0px;">
+            <span style="margin-left: 10%" ;>I</span> , <span class="divEmployee" style="font-weight: bold;"></span>,
+            working as <span id="divDesignation" style="font-weight: bold;"></span> at HRO Tirupati, I
+            have an urgent domestic work at my native place. I performed POH duty on <span id="divDutyOn"
+                style="font-weight: bold;"></span> with Hence kindly grant me CL for <span class="clContent"
+                style="font-weight: bold;text-decoration: underline;"></span> for which act of kindness, I shall be
+            grateful to you sir and permit me to leave the head Quarters.
+        </div>
+        <br>
+        <div id=" thank" style="text-align: center;">Thanking You Sir
+        </div>
+        <div id="faithful" style="text-align: end;">
+            <div>Yours Faithfully</div>
+            <br>
+            <div class="divEmployee"></div>
+        </div>
+
+    </div>
+
+
+    </div>
+    <script type="module" src="./co.js"></script>
+</body>
+
+</html>

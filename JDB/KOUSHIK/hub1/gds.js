@@ -36,6 +36,16 @@ bodyLoad1();
 
 document.getElementById("print").addEventListener("click", function (e) {
   e.preventDefault();
+
+  // document.getElementById("setName").innerHTML = `GDS Annexure Tirupati HUB - 1 Dated : ${mdatePlus}`;
+
+  // Display the table before printing
+  // document.getElementById("tableContainer").style.display = "block";
+
+  window.print();
+});
+
+document.getElementById("preview").addEventListener("click", function () {
   const fields = {
     optGds1: "gds1test",
     optGds2: "gds2test",
@@ -53,17 +63,24 @@ document.getElementById("print").addEventListener("click", function (e) {
     document.getElementById(target).textContent = document.getElementById(source).value;
   });
 
-  document.getElementById("setName").innerHTML = `GDS Annexure Tirupati HUB - 1 Dated : ${mdatePlus}`;
+  const dateValue = document.getElementById("setDay").value;
 
-  // Display the table before printing
+  let dropDate = "";
+
+  if (dateValue) {
+    const date = new Date(dateValue + "T00:00:00");
+
+    const dayName = date.toLocaleDateString("en-US", {
+      weekday: "long",
+    });
+
+    const formattedDate = dateValue.split("-").reverse().join("-");
+
+    dropDate = `${dayName}, ${formattedDate}`;
+  }
+
   document.getElementById("tableContainer").style.display = "block";
-
-  window.print();
-});
-
-document.getElementById("preview").addEventListener("click", function () {
-  document.getElementById("tableContainer").style.display = "block";
-  document.getElementById("setDate").innerHTML = `Tirupati HUB - 2A Dated : ${mdate} & Working Hours From 17:30 To 06:00`;
+  document.getElementById("setDate").innerHTML = `Tirupati HUB - 1 Dated : ${dropDate} & Working Hours From 08:45 To 16:45`;
   document.getElementById("tableContainer").style.marginTop = "100px";
   document.getElementById("tableContainer").contentEditable = true;
 });

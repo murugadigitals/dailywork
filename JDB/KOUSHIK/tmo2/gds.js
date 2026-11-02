@@ -35,6 +35,15 @@ bodyLoad1();
 
 document.getElementById("print").addEventListener("click", function (e) {
   e.preventDefault();
+
+  // Display the table before printing
+  document.getElementById("tableContainer").style.display = "block";
+
+  window.print();
+});
+
+document.getElementById("preview").addEventListener("click", function () {
+  document.getElementById("tableContainer").style.display = "block";
   const fields = {
     optGds1: "gds1test",
     optGds2: "gds2test",
@@ -51,13 +60,5 @@ document.getElementById("print").addEventListener("click", function (e) {
 
   document.getElementById("setName").innerHTML = `GDS Annexure Tirupati TMO - 1 Dated : ${mdatePlus}`;
 
-  // Display the table before printing
-  document.getElementById("tableContainer").style.display = "block";
-
-  window.print();
-});
-
-document.getElementById("preview").addEventListener("click", function () {
-  document.getElementById("tableContainer").style.display = "block";
   document.getElementById("tableContainer").contentEditable = true;
 });

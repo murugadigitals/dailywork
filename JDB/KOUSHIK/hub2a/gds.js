@@ -36,6 +36,19 @@ bodyLoad1();
 
 document.getElementById("print").addEventListener("click", function (e) {
   e.preventDefault();
+
+  // document.getElementById("setName").innerHTML = `GDS Annexure Tirupati HUB - 2A Dated : ${mdate}`;
+
+  // Display the table before printing
+  // document.getElementById("tableContainer").style.display = "block";
+  // document.getElementById("tableContainer").contentEditable = true;
+
+  window.print();
+});
+
+document.getElementById("preview").addEventListener("click", function () {
+  // alert("preview working");
+
   const fields = {
     optGds1: "gds1test",
     optGds2: "gds2test",
@@ -54,26 +67,31 @@ document.getElementById("print").addEventListener("click", function (e) {
   Object.entries(fields).forEach(([source, target]) => {
     document.getElementById(target).textContent = document.getElementById(source).value;
   });
-
-  // document.getElementById("setName").innerHTML = `GDS Annexure Tirupati HUB - 2A Dated : ${mdate}`;
-
-  // Display the table before printing
-  document.getElementById("tableContainer").style.display = "block";
-  document.getElementById("tableContainer").contentEditable = true;
-
-  window.print();
-});
-
-document.getElementById("preview").addEventListener("click", function () {
-  // alert("preview working");
   document.getElementById("tableContainer").style.display = "block";
   document.getElementById("tableContainer").contentEditable = true;
   document.getElementById("tableContainer").style.marginTop = "100px";
+
+  const dateValue = document.getElementById("setDay").value;
+
+  let dropDate = "";
+
+  if (dateValue) {
+    const date = new Date(dateValue + "T00:00:00");
+
+    const dayName = date.toLocaleDateString("en-US", {
+      weekday: "long",
+    });
+
+    const formattedDate = dateValue.split("-").reverse().join("-");
+
+    dropDate = `${dayName}, ${formattedDate}`;
+  }
+
   if (document.getElementById("selectSet").value === "Tirupati HUB - 2A") {
-    document.getElementById("setName").innerHTML = `GDS Annexure Tirupati HUB - 2A Dated : ${mdate}`;
+    document.getElementById("setName").innerHTML = `GDS Annexure Tirupati HUB - 2A Dated : ${dropDate}`;
     document.getElementById("set").innerHTML = `Tirupati HUB - 2A`;
   } else {
-    document.getElementById("setName").innerHTML = `GDS Annexure Tirupati HUB - 2B Dated : ${mdate}`;
+    document.getElementById("setName").innerHTML = `GDS Annexure Tirupati HUB - 2B Dated : ${dropDate}`;
     document.getElementById("set").innerHTML = `Tirupati HUB - 2B`;
   }
 });

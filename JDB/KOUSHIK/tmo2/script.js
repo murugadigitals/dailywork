@@ -16,6 +16,35 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 
 document.getElementById("print").addEventListener("click", function () {
+  // document.getElementById("setDate").innerHTML = `Tirupati TMO - 2 Dated : ${mdatePlus} & Working Hours From 11:30 To 19:30`;
+
+  window.print();
+  location.reload();
+});
+
+document.getElementById("preview").addEventListener("click", function () {
+  document.getElementById("tableContainer").style.display = "block";
+
+  const dateValue = document.getElementById("date").value;
+
+  let dropDate = "";
+
+  if (dateValue) {
+    const date = new Date(dateValue + "T00:00:00");
+
+    const dayName = date.toLocaleDateString("en-US", {
+      weekday: "long",
+    });
+
+    const formattedDate = dateValue.split("-").reverse().join("-");
+
+    dropDate = `${dayName}, ${formattedDate}`;
+  }
+
+  document.getElementById("setDate").innerHTML = `Tirupati TMO - 2 Dated : ${mdatePlus} & Working Hours From 11:30 To 19:30`;
+  document.getElementById("tableContainer").style.marginTop = "100px";
+  document.getElementById("tableContainer").contentEditable = true;
+
   const fields = {
     optMg1: "mg1test",
   };
@@ -23,16 +52,4 @@ document.getElementById("print").addEventListener("click", function () {
   Object.entries(fields).forEach(([source, target]) => {
     document.getElementById(target).textContent = document.getElementById(source).value;
   });
-
-  document.getElementById("setDate").innerHTML = `Tirupati TMO - 2 Dated : ${mdatePlus} & Working Hours From 11:30 To 19:30`;
-
-  window.print();
-  // location.reload();
-});
-
-document.getElementById("preview").addEventListener("click", function () {
-  document.getElementById("tableContainer").style.display = "block";
-  document.getElementById("setDate").innerHTML = `Tirupati TMO - 2 Dated : ${mdatePlus} & Working Hours From 11:30 To 19:30`;
-  document.getElementById("tableContainer").style.marginTop = "100px";
-  document.getElementById("tableContainer").contentEditable = true;
 });

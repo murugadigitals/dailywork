@@ -158,11 +158,6 @@ function printClick() {
   Object.entries(fields).forEach(([source, target]) => {
     document.getElementById(target).textContent = document.getElementById(source).value;
   });
-  if (document.getElementById("selectSet").value === "Tirupati HUB - 2A") {
-    document.getElementById("setDate").innerHTML = `Tirupati HUB - 2A Dated : ${mdate} & Working Hours From 17:30 To 06:00`;
-  } else {
-    document.getElementById("setDate").innerHTML = `Tirupati HUB - 2B Dated : ${mdate} & Working Hours From 17:30 To 06:00`;
-  }
 
   // if (gds4 === "N/A" || gds5 === "N/A") {
   //   document.getElementById("gdsTotal").textContent = "36";
@@ -184,7 +179,29 @@ window.printClick = printClick;
 
 document.getElementById("preview").addEventListener("click", function () {
   document.getElementById("tableContainer").style.display = "block";
-  document.getElementById("setDate").innerHTML = `Tirupati HUB - 2A Dated : ${mdate} & Working Hours From 17:30 To 06:00`;
+
+  const dateValue = document.getElementById("date").value;
+
+  let dropDate = "";
+
+  if (dateValue) {
+    const date = new Date(dateValue + "T00:00:00");
+
+    const dayName = date.toLocaleDateString("en-US", {
+      weekday: "long",
+    });
+
+    const formattedDate = dateValue.split("-").reverse().join("-");
+
+    dropDate = `${dayName}, ${formattedDate}`;
+  }
+
+  if (document.getElementById("selectSet").value === "Tirupati HUB - 2A") {
+    document.getElementById("setDate").innerHTML = `Tirupati HUB - 2A Dated : ${dropDate} & Working Hours From 17:30 To 06:00`;
+  } else {
+    document.getElementById("setDate").innerHTML = `Tirupati HUB - 2B Dated : ${dropDate} & Working Hours From 17:30 To 06:00`;
+  }
+  // document.getElementById("setDate").innerHTML = `Tirupati HUB - 2A Dated : ${mdate} & Working Hours From 17:30 To 06:00`;
   document.getElementById("tableContainer").style.marginTop = "100px";
   document.getElementById("tableContainer").contentEditable = true;
 });

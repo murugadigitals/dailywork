@@ -22,6 +22,7 @@ document.getElementById("push1").addEventListener("click", function () {
   let selectedOsa = document.getElementById("optOsa").value;
   if (selectedOsa !== "--Select OSA Name--" && items.indexOf(selectedOsa) === -1) {
     items.push(selectedOsa);
+    items.sort((a, b) => a.localeCompare(b));
 
     document.querySelector("ol").innerHTML = "";
     items.forEach((item) => {

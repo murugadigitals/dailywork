@@ -98,6 +98,37 @@ document.getElementById("print").addEventListener("click", function () {
   // let gds4 = document.getElementById("optGds4").value;
   // let gds5 = document.getElementById("optGds5").value;
 
+  // document.getElementById("setDate").innerHTML = `Tirupati HUB - 1 Dated : ${mdatePlus} & Working Hours From 17:30 To 06:00`;
+
+  // if (gds4 === "N/A" || gds5 === "N/A") {
+  //   document.getElementById("gdsTotal").textContent = "36";
+  // }
+  // if (gds4 === "N/A" && gds5 === "N/A") {
+  //   document.getElementById("gdsTotal").textContent = "41";
+  // }
+  window.print();
+});
+
+document.getElementById("preview").addEventListener("click", function () {
+  document.getElementById("tableContainer").style.display = "block";
+  const dateValue = document.getElementById("date").value;
+
+  let dropDate = "";
+
+  if (dateValue) {
+    const date = new Date(dateValue + "T00:00:00");
+
+    const dayName = date.toLocaleDateString("en-US", {
+      weekday: "long",
+    });
+
+    const formattedDate = dateValue.split("-").reverse().join("-");
+
+    dropDate = `${dayName}, ${formattedDate}`;
+  }
+  document.getElementById("setDate").innerHTML = `Tirupati HUB - 1 Dated : ${dropDate} & Working Hours From 08:45 To 16:45`;
+  document.getElementById("tableContainer").style.marginTop = "100px";
+  document.getElementById("tableContainer").contentEditable = true;
   const fields = {
     optHsa: "hsatest",
     optSuper: "suptest",
@@ -143,21 +174,4 @@ document.getElementById("print").addEventListener("click", function () {
   Object.entries(fields).forEach(([source, target]) => {
     document.getElementById(target).textContent = document.getElementById(source).value;
   });
-
-  // document.getElementById("setDate").innerHTML = `Tirupati HUB - 1 Dated : ${mdatePlus} & Working Hours From 17:30 To 06:00`;
-
-  // if (gds4 === "N/A" || gds5 === "N/A") {
-  //   document.getElementById("gdsTotal").textContent = "36";
-  // }
-  // if (gds4 === "N/A" && gds5 === "N/A") {
-  //   document.getElementById("gdsTotal").textContent = "41";
-  // }
-  window.print();
-});
-
-document.getElementById("preview").addEventListener("click", function () {
-  document.getElementById("tableContainer").style.display = "block";
-  document.getElementById("setDate").innerHTML = `Tirupati HUB - 1 Dated : ${mdate} & Working Hours From 08:45 To 16:45`;
-  document.getElementById("tableContainer").style.marginTop = "100px";
-  document.getElementById("tableContainer").contentEditable = true;
 });
