@@ -88,11 +88,11 @@ function bodyLoad1() {
       option.value = emp;
       option.textContent = emp;
 
-      if (id === "optGds5" && emp === "J Dilli Babu") {
+      if (id === "optGds4" && emp === "N Hari Prasad") {
         option.selected = true;
       }
 
-      if (id === "optGds4" && emp === "N Hari Prasad") {
+      if (id === "optGds5" && emp === "J Dilli Babu") {
         option.selected = true;
       }
 
@@ -103,8 +103,14 @@ function bodyLoad1() {
   });
 }
 function printClick() {
-  // let gds4 = document.getElementById("optGds4").value;
-  // let gds5 = document.getElementById("optGds5").value;
+  window.print();
+}
+
+window.bodyLoad1 = bodyLoad1;
+window.printClick = printClick;
+
+document.getElementById("preview").addEventListener("click", function () {
+  document.getElementById("tableContainer").style.display = "block";
 
   const fields = {
     optHsa: "hsatest",
@@ -158,27 +164,6 @@ function printClick() {
   Object.entries(fields).forEach(([source, target]) => {
     document.getElementById(target).textContent = document.getElementById(source).value;
   });
-
-  // if (gds4 === "N/A" || gds5 === "N/A") {
-  //   document.getElementById("gdsTotal").textContent = "36";
-  // }
-  // if (gds4 === "N/A" && gds5 === "N/A") {
-  //   document.getElementById("gdsTotal").textContent = "41";
-  // }
-  window.print();
-}
-
-// document.getElementById("preview").addEventListener("click", function () {
-//   alert("preview working");
-//   document.getElementById("tableContainer").style.display = "block";
-//   document.getElementById("tableContainer").contentEditable = true;
-// });
-
-window.bodyLoad1 = bodyLoad1;
-window.printClick = printClick;
-
-document.getElementById("preview").addEventListener("click", function () {
-  document.getElementById("tableContainer").style.display = "block";
 
   const dateValue = document.getElementById("date").value;
 

@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TTD Set Memo</title>
+
+    <link rel="stylesheet" href="../node_modules/bootstrap-icons/font/bootstrap-icons.css">
+    <!-- <link rel="stylesheet" href="./node_modules/bootstrap/dist/css/bootstrap.min.css"> -->
+    <link rel="stylesheet" href="../assests/filecss.css">
+
+</head>
+
+<body onload="bodyLoad1()">
+    <br>
+    <div id="inputContainer" style="display: grid;grid-template-columns: 4fr 4fr 4fr;gap: 100px;">
+        <div id="saContainer">
+            <div>
+                <div class="alignNames" style="font-weight: bold;text-decoration: underline;font-size: larger;">
+                    <label for="">Designation</label>
+                    <label for="">Select Official</label>
+                </div>
+                <br>
+                <div class="alignNames">
+                    <label for="">PSA1</label>
+                    <select name="" id="optHsa" required> </select>
+                </div><br>
+
+                <div class="alignNames">
+                    <label for=""> PSA2 </label>
+                    <select name="" id="optSuper"> </select>
+                </div>
+                <br>
+
+            </div>
+        </div>
+        <div id="mtsContainer">
+            <div>
+                <div class="alignNames" style="font-weight: bold;text-decoration: underline;font-size: larger;">
+                    <label for="">Designation</label>
+                    <label for="">Select Official</label>
+                </div>
+                <br>
+
+
+                <div class="alignNames">
+                    <label for=""> MTS - 1 </label>
+                    <select name="" id="optMts1"> </select>
+                </div>
+                <br>
+                <div class="alignNames">
+                    <label for=""> MTS - 2 </label>
+                    <select name="" id="optMts2"> </select>
+                </div>
+                <br>
+
+            </div>
+        </div>
+        <div id="btnsContainer">
+
+            <div>
+                <h4>Select The SET</h4>
+                <select id="selectSet">
+                    <option value="">--Select Set--</option>
+                    <option value="Tirupati HUB - 2A">Tirupati HUB - 2A</option>
+                    <option value="Tirupati HUB - 2B">Tirupati HUB - 2B</option>
+                    <option value="Tirupati HUB - 1">Tirupati HUB - 1</option>
+                </select>
+            </div>
+            <br>
+            <div>
+                <h4>Select Date:</h4>
+                <input type="date" name="" id="date" style="width: 240px;padding: 5px;border-radius: 5px;">
+            </div>
+            <br>
+            <div>
+                <button id="preview">Preview</button>
+            </div>
+            <div>
+                <button onclick="printClick()">Print</button>
+            </div>
+            <div>
+                <button>Reset</button>
+            </div>
+
+        </div>
+    </div>
+    <div id="tableContainer">
+        <div id="headerDiv">
+            <div id="header">
+                <div id="ashok">
+                    <img src="../assests/ashok.png" alt="" width="70" height="80">
+                </div>
+                <div
+                    style="text-align: center;position: relative;text-wrap:nowrap;z-index: 100;line-height: 23px;font-weight: bold;">
+                    <div>भारतीय डाक विभाग </div>
+                    <div>Department of Posts :: India</div>
+                    <div>प्रधान अभिलेख अधिकारी रेल डाक सेवा टि. पि. मंडल तिरुपति कार्यालय - 517501</div>
+                    <div>Head Record Office, RMS TP Dn., Tirupati - 517501</div>
+                </div>
+                <div id="logo">
+                    <img src="../assests/logo.png" alt="" width="140" height="80">
+                </div>
+            </div>
+        </div>
+        <br>
+        <div id="setmemoDiv">
+            <table id="setmemoTable">
+                <tr>
+                    <th style="border-top-left-radius: 5px;border-top-right-radius: 5px;">SET MEMO</th>
+                </tr>
+                <tr>
+                    <th style="border-bottom-left-radius: 5px;border-bottom-right-radius: 5px;" id="setDate">
+
+                    </th>
+                </tr>
+            </table>
+        </div><br>
+        <div id="namesDiv">
+            <table id="namesTable">
+                <thead>
+                    <tr class="toprow" style="background-color: rgb(231, 231, 7);text-align: center;color:blue;">
+                        <th rowspan="2" width="" style="border-top-left-radius: 7px;">Designation</th>
+                        <th rowspan="2" width="">Name of the Official<br>( Shri | Smt | Kum )</th>
+                        <th rowspan="2" width="">Designation</th>
+                        <th rowspan="2" width="">Name of the Official<br>( Shri | Smt | Kum )</th>
+                        <th colspan="2" width="" style="border-top-right-radius: 7px;">Working Hours</th>
+                    </tr>
+                    <tr class="toprow" style="background-color: rgb(231, 231, 7);text-align: center;color:blue;">
+                        <th width="">From</th>
+                        <th width="">To</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>&nbsp;</td>
+                        <td>&nbsp;</td>
+                        <td>&nbsp;</td>
+                        <td>&nbsp;</td>
+                        <td>&nbsp;</td>
+                        <td>&nbsp;</td>
+                    </tr>
+                    <tr>
+                        <td class="rightAlign">PSA - 1 &nbsp;</td>
+                        <td id="hsatest" style="font-size: 14px;" class="indent">S Maruthi Prasad Reddy</td>
+                        <td class="rightAlign">MTS - 1 &nbsp;</td>
+                        <td id="mg1test" class="indent">P Koteswara Sharma</td>
+                        <td align="center">17:30:00</td>
+                        <td align="center">06:00:00</td>
+                    </tr>
+
+                    <tr>
+                        <td class="rightAlign">PSA - 2 &nbsp;</td>
+                        <td id="suptest" style="font-size: 14px;" class="indent">S Maruthi Prasad Reddy</td>
+                        <td class="rightAlign">MTS - 2 &nbsp;</td>
+                        <td id="mg2test" class="indent">P Koteswara Sharma</td>
+                        <td align="center">17:30:00</td>
+                        <td align="center">06:00:00</td>
+                    </tr>
+
+                    <tr>
+                        <td>&nbsp;</td>
+                        <td>&nbsp;</td>
+                        <td>&nbsp;</td>
+                        <td>&nbsp;</td>
+                        <td>&nbsp;</td>
+                        <td>&nbsp;</td>
+                    </tr>
+                    <tr>
+                        <td style="border-bottom-left-radius: 7px;">&nbsp;</td>
+                        <td>&nbsp;</td>
+                        <td>&nbsp;</td>
+                        <td>&nbsp;</td>
+                        <td>&nbsp;</td>
+                        <td style="border-bottom-right-radius: 7px;">&nbsp;</td>
+
+                    </tr>
+
+
+                </tbody>
+            </table>
+        </div>
+        <div style="text-align: end;margin-top: 60px;" id=hrosign>
+            <p>प्रधान अभिलेख अधिकारी <br> रेल डाक सेवा टि.पि. मंडल तिरुपति - 517 501 <br>Head Record Officer<br> RMS TP
+                Dn.,
+                Tirupati - 517501</p>
+        </div>
+    </div>
+
+
+
+    <script type="module" src="./script.js"></script>
+
+</body>
+
+</html>

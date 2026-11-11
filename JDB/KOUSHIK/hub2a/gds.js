@@ -48,6 +48,7 @@ document.getElementById("print").addEventListener("click", function (e) {
 
 document.getElementById("preview").addEventListener("click", function () {
   // alert("preview working");
+  alert("Please check GDS Total Hours if J Dilli Babu, N Hari Prasad are on leave");
 
   const fields = {
     optGds1: "gds1test",

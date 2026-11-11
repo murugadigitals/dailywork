@@ -122,8 +122,17 @@ document.getElementById("genTable").addEventListener("click", function () {
   } else if (officeName === "Tirupati HUB - 1") {
     document.getElementById("dateDiv").innerHTML = `OSA Annexure, Tirupati HUB - 1 Dated : ${dropDate}`;
     document.getElementById("hsaSign").textContent = officeName;
+  } else if (officeName === "TTD SPL SET - 2B") {
+    document.getElementById("dateDiv").innerHTML = `OSA Annexure, TTD SPL SET - 2B Dated : ${dropDate}`;
+    document.getElementById("hsaSign").textContent = officeName;
+  } else if (officeName === "TTD SPL SET - 2A") {
+    document.getElementById("dateDiv").innerHTML = `OSA Annexure, TTD SPL SET - 2A Dated : ${dropDate}`;
+    document.getElementById("hsaSign").textContent = officeName;
+  } else if (officeName === "TTD SPL SET - 1") {
+    document.getElementById("dateDiv").innerHTML = `OSA Annexure, TTD SPL SET - 1 Dated : ${dropDate}`;
+    document.getElementById("hsaSign").textContent = officeName;
   }
 
   window.print();
-  location.reload();
+  // location.reload();
 });
