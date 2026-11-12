@@ -49,14 +49,30 @@ document.getElementById("preview").addEventListener("click", function () {
 
   document.getElementById("designationDiv").textContent = document.getElementById("optDesignation").value;
   document.getElementById("divDesignation").textContent = document.getElementById("optDesignation").value;
+  document.getElementById("withSetDiv").textContent = document.getElementById("withSet").value;
+
+  let date2modify = date2.split("-").reverse();
+
+  // console.log();
+
+  // document.getElementById("leaveOnDiv").textContent = `${date2modify[0]}-${date2modify[1]}-${date2modify[2]} `;
 
   document.querySelectorAll(".divEmployee").forEach((item) => {
     item.textContent = document.querySelector(".emp-names").value;
   });
 
+  document.querySelectorAll(".leaveOn").forEach((item) => {
+    item.textContent = `${date2modify[0]}-${date2modify[1]}-${date2modify[2]}`;
+  });
+
+  document.getElementById("daysCount").textContent = `CO leave applied on ======>${date2modify[0]}-${date2modify[1]}-${date2modify[2]}`;
+
   if (endDate < startDate) {
     daysCount.textContent = "End date must be on or after start date";
     return;
+  }
+  if (startDate === endDate) {
+    daysCount.textContent = `CO leave on ======>${startDate}`;
   }
 
   document.getElementById("outputContainer").style.display = "block";
