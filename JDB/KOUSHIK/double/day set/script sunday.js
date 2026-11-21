@@ -98,6 +98,22 @@ document.getElementById("print").addEventListener("click", function () {
   // let gds4 = document.getElementById("optGds4").value;
   // let gds5 = document.getElementById("optGds5").value;
 
+  // document.getElementById("setDate").innerHTML = `Tirupati HUB - 1 Dated : ${dropDate} & Working Hours From 17:30 To 06:00`;
+  document.getElementById("inputContainer").style.display = "none";
+
+  // if (gds4 === "N/A" || gds5 === "N/A") {
+  //   document.getElementById("gdsTotal").textContent = "36";
+  // }
+  // if (gds4 === "N/A" && gds5 === "N/A") {
+  //   document.getElementById("gdsTotal").textContent = "41";
+  // }
+  window.print();
+  window.location.reload();
+});
+
+document.getElementById("preview").addEventListener("click", function () {
+  const dateValue = document.getElementById("setDay").value;
+
   const fields = {
     optHsa: "hsatest",
     optSuper: "suptest",
@@ -137,21 +153,6 @@ document.getElementById("print").addEventListener("click", function () {
   Object.entries(fields).forEach(([source, target]) => {
     document.getElementById(target).textContent = document.getElementById(source).value;
   });
-
-  // document.getElementById("setDate").innerHTML = `Tirupati HUB - 1 Dated : ${dropDate} & Working Hours From 17:30 To 06:00`;
-  document.getElementById("inputContainer").style.display = "none";
-
-  // if (gds4 === "N/A" || gds5 === "N/A") {
-  //   document.getElementById("gdsTotal").textContent = "36";
-  // }
-  // if (gds4 === "N/A" && gds5 === "N/A") {
-  //   document.getElementById("gdsTotal").textContent = "41";
-  // }
-  window.print();
-});
-
-document.getElementById("preview").addEventListener("click", function () {
-  const dateValue = document.getElementById("setDay").value;
 
   let dropDate = "";
 

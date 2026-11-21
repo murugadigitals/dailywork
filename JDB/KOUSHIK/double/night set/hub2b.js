@@ -88,11 +88,7 @@ function bodyLoad1() {
       option.value = emp;
       option.textContent = emp;
 
-      if (id === "optGds5" && emp === "J Dilli Babu") {
-        option.selected = true;
-      }
-
-      if (id === "optGds4" && emp === "N Hari Prasad") {
+      if (id === "optGds2" && emp === "N Hari Prasad") {
         option.selected = true;
       }
 
@@ -107,21 +103,29 @@ document.getElementById("print").addEventListener("click", function () {
   // let gds4 = document.getElementById("optGds4").value;
   // let gds5 = document.getElementById("optGds5").value;
 
+  // if (gds4 === "N/A" || gds5 === "N/A") {
+  //   document.getElementById("gdsTotal").textContent = "36";
+  // }
+  // if (gds4 === "N/A" && gds5 === "N/A") {
+  //   document.getElementById("gdsTotal").textContent = "41";
+  // }
+  window.print();
+  window.location.reload();
+});
+
+document.getElementById("preview").addEventListener("click", function () {
+  const dateValue = document.getElementById("setDay").value;
+
   const fields = {
     optHsa: "hsatest",
     // optSuper: "suptest",
 
     optMsa1: "msa1test",
-    // optMsa2: "msa2test",
 
     optSpsa1: "spsa1test",
     optSpsa2: "spsa2test",
     optSpsa3: "spsa3test",
     optSpsa4: "spsa4test",
-    // optSpsa5: "spsa5test",
-    // optSpsa6: "spsa6test",
-    // optSpsa7: "spsa7test",
-    // optSpsa8: "spsa8test",
 
     optPsa1: "psa1test",
     optPsa2: "psa2test",
@@ -163,18 +167,6 @@ document.getElementById("print").addEventListener("click", function () {
   document.getElementById("tableContainer").style.display = "block";
   // document.getElementById("setDate").innerHTML = `Tirupati HUB - 2B Dated : ${mdate} & Working Hours From 17:30 To 06:00`;
   document.getElementById("tableContainer").contentEditable = true;
-
-  // if (gds4 === "N/A" || gds5 === "N/A") {
-  //   document.getElementById("gdsTotal").textContent = "36";
-  // }
-  // if (gds4 === "N/A" && gds5 === "N/A") {
-  //   document.getElementById("gdsTotal").textContent = "41";
-  // }
-  window.print();
-});
-
-document.getElementById("preview").addEventListener("click", function () {
-  const dateValue = document.getElementById("setDay").value;
 
   let dropDate = "";
 

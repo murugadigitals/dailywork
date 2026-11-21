@@ -36,6 +36,14 @@ bodyLoad1();
 
 document.getElementById("print").addEventListener("click", function (e) {
   e.preventDefault();
+
+  window.print();
+});
+
+document.getElementById("preview").addEventListener("click", function () {
+  // alert("preview working");
+  const dateValue = document.getElementById("setDay").value;
+
   const fields = {
     optGds1: "gds1test",
     optGds2: "gds2test",
@@ -57,13 +65,6 @@ document.getElementById("print").addEventListener("click", function (e) {
   // Display the table before printing
   document.getElementById("tableContainer").style.display = "block";
   document.getElementById("tableContainer").contentEditable = true;
-
-  window.print();
-});
-
-document.getElementById("preview").addEventListener("click", function () {
-  // alert("preview working");
-  const dateValue = document.getElementById("setDay").value;
 
   let dropDate = "";
 

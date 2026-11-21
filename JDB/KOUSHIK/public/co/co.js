@@ -5,8 +5,8 @@ const employees1 = employeeList.sort((a, b) => a.localeCompare(b));
 const employees = ["--Select Employee--", ...employees1];
 
 const x = new Date().toLocaleDateString();
-const xConstructorDate = new Date(x);
-console.log();
+// const xConstructorDate = new Date(x);
+// console.log();
 
 // console.log(x.split("/").reverse());
 // const y = x.split("/").reverse();
@@ -17,8 +17,9 @@ console.log();
 
 // const newDate = `${y[1]}-${y[2]}-${y[0]}`;
 // console.log(newDate);
+const dateSpilit = x.split("/");
 
-document.getElementById("date").textContent = x.split("/").join("-");
+document.getElementById("date").textContent = `${dateSpilit[1]}-${dateSpilit[0]}-${dateSpilit[2]}`;
 
 // console.log(employees);
 // const x1 = window.body.fontSize;

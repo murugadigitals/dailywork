@@ -16,6 +16,12 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 
 document.getElementById("print").addEventListener("click", function () {
+  window.print();
+  // location.reload();
+});
+
+document.getElementById("preview").addEventListener("click", function () {
+  const dateValue = document.getElementById("setDay").value;
   const fields = {
     optMg1: "mg1test",
   };
@@ -23,13 +29,6 @@ document.getElementById("print").addEventListener("click", function () {
   Object.entries(fields).forEach(([source, target]) => {
     document.getElementById(target).textContent = document.getElementById(source).value;
   });
-
-  window.print();
-  // location.reload();
-});
-
-document.getElementById("preview").addEventListener("click", function () {
-  const dateValue = document.getElementById("setDay").value;
 
   let dropDate = "";
 
